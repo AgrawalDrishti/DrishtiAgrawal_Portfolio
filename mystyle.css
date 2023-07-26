@@ -1,33 +1,71 @@
 * {
     box-sizing: border-box;
     margin: 0 ;
-    padding: 0;
+    /* padding: 0; */
   }
 
 body {
-    margin: 0;
+    /* margin: 0; */
     font-family: -apple-system, BlinkMacSystemFont, 
       'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
       'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .header{
-    padding:  10px 5%;
+  position: absolute;
+  margin-top: 12%;
+  margin-left: 5%;
   }
 
+.heading .hello{
+  color: rgb(237, 27, 27);
+  font-weight: bold;
+  font-size: 25px;
+}
 
-.heading {
+.heading h1{
+  color: white;
+  font-size: 45px;
+}
+
+.heading .about{
+  color: rgba(255, 255, 255, 0.826);
+}
+
+.heading button{
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: transparent;
+  margin-right: 1em;
+  /* font-size: 15px; */
+  background-image: linear-gradient(rgb(229, 7, 7), rgb(240, 95, 95));
+}
+
+.heading a{
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  
+}
+
+img{
+  position: absolute;
+  margin-left: 55%;
+  width: 600px;
+  margin-top: 10%;
+  opacity: 0.2;
+}
+/* .heading {
     margin-left: 26%;
     position: absolute;
     text-align: center;
     top: 30%;
-    /* width: 100%; */
 }
 .heading h1 {
-    /* color: limegreen; */
     color: #b2d4e6;
-    /* color: rgb(0, 255, 200);; */
-    /* color: #77dd77; */
     font-size: 70px;
     font-family: "Pacifico" , cursive;
 }
@@ -36,16 +74,16 @@ body {
     color: #fffaf1;
     font-size: 20px;
     font-family: 'Tilt Neon', cursive;
-}
+} */
 #particles-js {
     background: black;
-    height: 90%;
-    /* width: 100%; */
+    height: 80%;
 }
 hr{
     /* margin-left: 5%; */
     margin-top: 0.8%;
     margin-right: 5%;
+    margin-left: 3%;
     height: 0.5px;
     border: solid 0.5px #e9e3e369;
   }
@@ -90,7 +128,9 @@ nav ul li a:hover::after{
     width: 100%;
 }
 
-.nav {
+
+
+/* .nav {
     position: fixed;
     top: 0;
     background: rgb(244, 226, 226);
@@ -102,7 +142,7 @@ nav ul li a:hover::after{
     float: left;
     height: 10%;
     background-color: rgba(159, 157, 157, 0.166);
-  }
+  } */
   
   .nav a{
     position: relative;

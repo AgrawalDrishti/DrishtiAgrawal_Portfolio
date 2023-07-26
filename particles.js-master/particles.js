@@ -20,10 +20,10 @@ var pJS = function(tag_id, params){
     },
     particles: {
       number: {
-        value: 500,
+        value: 100,
         density: {
           enable: true,
-          value_area: 800
+          value_area: 100
         }
       },
       color: {
@@ -67,7 +67,7 @@ var pJS = function(tag_id, params){
       line_linked: {
         enable: true,
         distance: 100,
-        color: '#fff',
+        color: '#FF0000',
         opacity: 0,
         width: 1
       },
@@ -109,7 +109,7 @@ var pJS = function(tag_id, params){
         },
         bubble:{
           distance: 200,
-          size: 80,
+          size: 60,
           duration: 0.4
         },
         repulse:{
