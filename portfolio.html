@@ -1,66 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="header">
-        <nav>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./abt_me.html">About</a></li>
-            <li><a href="./portfolio.html">Portfolio</a></li>
-            
-          </ul>
-        </nav>
-      </div>
-      <hr>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./abt_me.html">About</a></li>
+          <li><a href="./portfolio.html">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr />
     <div class="portfolio">
-        <div class="containerPort">
-            <h1 class="portTitle">Here are my projects </h1>
-            <div class="work-list">
-                <div class="work">
-                    <img src="./quespy.jpg" alt="">
-                    <div class="layer">
-                        <h3>Crowd Sourcing Website</h3>
-                        <p>A crowd sourcing website used to generate random question bank within no time. All the questions are well verified by the expert panel and the redundancy check too is applied.</p>
-                        <!-- <a href="#"><i class="fas fa-external-link-alt"></i></a> -->
-                        <a href="https://github.com/naman280104/QuesPy" target="_blank"><img src="./tab.png" alt="tab icon" class="tabIcon"></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="./pika.jpg" alt="">
-                    <div class="layer">
-                        <h3>AR web application</h3>
-                        <p>The web app provides the virtual laboratory to the students enabling them to perform physics experiments along with adequate measurements. </p>
-                        <a href="https://github.com/AgrawalDrishti/Unity_App_Simpulum" target="_blank"><img src="./tab.png" alt="tab icon" class="tabIcon"></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="./pizzaPlanet2.png" alt="">
-                    <div class="layer">
-                        <h3>Food delivery app</h3>
-                        <p>This a food delivery app prepared for the nearby restaurant named as "Pizza Planet" to make the ordering and delivery processes easier.</p>
-                        <a href="https://github.com/Asharma538/pizza_planet_app" target="_blank"><img src="./tab.png" alt="tab icon" class="tabIcon"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="carousel-container">
+        <button id="prevBtn"><i><</i></button>
+        <div class="work-list" id="workList"></div>
+        <button id="nextBtn"><i>></i></button>
+      </div>
     </div>
     <div class="infoCont">
-        <div class="myinfo">
-            <p class="infor">For more info : </p>
-            <a href="https://www.linkedin.com/in/drishti-agrawal-a6b977229/" target="_blank"><img src="./ll2.png" alt="llicon" ></a>
-            <a href="https://discord.com/channels/@me"><img src="./sqD.png" alt="" ></a>
-            <a href="https://outlook.live.com/mail/0/"><img src="./sqM.png" alt=""></a>
-            <a href="https://github.com/AgrawalDrishti"><img src="./gt.png" alt=""></a>
-            <a href="https://www.instagram.com/"><img src="./insta.png" alt=""></a>
-        </div>
+      <div class="myinfo">
+        <p class="infor">For more info :</p>
+        <a
+          href="https://www.linkedin.com/in/drishti-agrawal-a6b977229/"
+          target="_blank"
+          ><img src="./ll2.png" alt="llicon"
+        /></a>
+        <a href="https://discord.com/channels/@me"
+          ><img src="./sqD.png" alt=""
+        /></a>
+        <a href="https://outlook.live.com/mail/0/"
+          ><img src="./sqM.png" alt=""
+        /></a>
+        <a href="https://github.com/AgrawalDrishti"
+          ><img src="./gt.png" alt=""
+        /></a>
+        <a href="https://www.instagram.com/"
+          ><img src="./insta.png" alt=""
+        /></a>
+      </div>
     </div>
-</body>
+
+    <script>
+      // Array of project objects
+      const projects = [
+        {
+          title: "Multi Lingual Proof Reading",
+          description:
+            "An automated tool to perform proof reading in terms of tonality detection. Languages supported are English, French & German.",
+          image: "proof-read.jpg",
+          link: "",
+          techStack: [
+            { name: "NLP", icon: "./icons/pdf.webp" },
+            { name: "Machine Learning", icon: "./icons/ml.png" },
+            { name: "Machine Learning", icon: "./icons/meta.webp" },
+            { name: "Machine Learning", icon: "./icons/gpt.png" },
+          ],
+        },
+        {
+          title: "Deployment Bot",
+          description:
+            "Automating the process of deployment using Github URL, Docker Image or a Zip file.",
+          image: "bot.webp",
+          link: "https://github.com/AgrawalDrishti/SDE_Mini_Project",
+          techStack: [
+            { name: "Node.js", icon: "./icons/node.png" },
+            { name: "Node.js", icon: "./icons/gcloud.png" },
+            { name: "Docker", icon: "./icons/docker.webp" },
+          ],
+        },
+        {
+          title: "Food delivery app",
+          description:
+            "This a food delivery app prepared for the nearby restaurant named as 'Pizza Planet' to make the ordering and delivery processes easier.",
+          image: "./pizzaPlanet2.png",
+          link: "https://github.com/Asharma538/pizza_planet_app",
+          techStack: [
+            { name: "Flutter", icon: "./icons/Flutter.webp" },
+            { name: "Firebase", icon: "./icons/firebase.webp" },
+            { name: "Dart", icon: "./icons/dart.png" },
+          ],
+        },
+        {
+          title: "Crowd Sourcing Website",
+          description:
+            "A crowd sourcing website used to generate random question bank within no time. All the questions are well verified by the expert panel and the redundancy check too is applied.",
+          image: "./quespy.jpg",
+          link: "https://github.com/naman280104/QuesPy",
+          techStack: [
+            { name: "HTML", icon: "./icons/html-43.png" },
+            { name: "CSS", icon: "./icons/css_img.webp" },
+            { name: "JavaScript", icon: "./icons/JS.webp" },
+            { name: "JavaScript", icon: "./icons/django.png" },
+          ],
+        },
+        {
+          title: "Screen Time Monitoring App",
+          description:
+            "A linux based desktop application built using PyQt5 and shell scripting to monitor the time spent on all the desktop applications by the users.",
+          image: "./screen.jpeg",
+          link: "https://github.com/Asharma538/OS_Project",
+          techStack: [
+            { name: "Python", icon: "./icons/python.png" },
+            { name: "Shell Scripting", icon: "./icons/shellScripy.webp" },
+            { name: "Shell Scripting", icon: "./icons/linux.png" },
+          ],
+        },
+        {
+          title: "On-Chain Radio",
+          description:
+            "Decentralised music streaming platform, built using Aptos blockchain",
+          image: "./OIP.jpeg",
+          link: "https://github.com/khushi-parikh/inter-iit-blockchain",
+          techStack: [
+            { name: "Solidity", icon: "./icons/type.png" },
+            { name: "Blockchain", icon: "./icons/aptos.png" },
+            { name: "Blockchain", icon: "./icons/css_img.webp" },
+          ],
+        },
+        {
+          title: "Yoga Med",
+          description:
+            "An app for All India Institute of Ayurveda to provide therapy through Music.",
+          image: "music.jpg",
+          link: "https://github.com/AgrawalDrishti/SDE_Mini_Project",
+          techStack: [
+            { name: "Android", icon: "./icons/Flutter.webp" },
+            { name: "Kotlin", icon: "./icons/dart.png" },
+            { name: "Kotlin", icon: "./icons/firebase.webp" },
+          ],
+        },
+        {
+          title: "AR web application",
+          description:
+            "The web app provides the virtual laboratory to the students enabling them to perform physics experiments along with adequate measurements.",
+          image: "./pika.jpg",
+          link: "https://github.com/AgrawalDrishti/Unity_App_Simpulum",
+          techStack: [
+            { name: "Unity", icon: "./icons/unity.png" },
+            { name: "C#", icon: "./icons/csharp.png" },
+          ],
+        },
+        
+      ];
+
+      let currentIndex = 0;
+
+      const projectsPerPage = 4;
+
+      function createProjectCard(project) {
+        // Generate the tech stack icons
+        let techStackIcons = project.techStack
+          .map(
+            (tech) =>
+              '<img src="' +
+              tech.icon +
+              '" alt="' +
+              tech.name +
+              '" title="' +
+              tech.name +
+              '" class="tech-icon">'
+          )
+          .join("");
+
+        // var card =
+        //   '<div class="work">' +
+        //   '<img src="' +
+        //   project.image +
+        //   '" alt="">' +
+        //   '<div class="layer">' +
+        //   "<h3>" +
+        //   project.title +
+        //   "</h3>" +
+        //   "<p>" +
+        //   project.description +
+        //   "</p>" +
+        //   '<div class="tech-stack">' +
+        //   techStackIcons +
+        //   "</div>" + 
+        //   "</div>" +
+        //   (project.link
+        //     ? '<a href="' +
+        //       project.link +
+        //       '" target="_blank"><img src="./tab.png" alt="tab icon" class="tabIcon"></a>'
+        //     : "") +
+        //   "</div>";
+
+        var card = '<div class="work">' +
+          '<img src="' + project.image + '" alt="' + project.title + '" class="project-image">' + // Added class here
+          '<div class="layer">' +
+          '<h3>' + project.title + '</h3>' +
+          '<p>' + project.description + '</p>' +
+          '<div class="tech-stack">';
+
+        // Loop through the techStack array to create icons and append them to the .tech-stack container
+        project.techStack.forEach(function(tech) {
+          card += '<img src="' + tech.icon + '" alt="' + tech.name + '" class="tech-icon">';
+        });
+
+        card += '</div>' + // Close the .tech-stack container
+          '</div>' + // Close the .layer container
+          (project.link ? '<a href="' + project.link + '" target="_blank"><img src="./tab.png" alt="tab icon" class="tabIcon"></a>' : "") +
+          '</div>'; // Close the .work container
+
+        return card;
+
+
+      }
+
+      function renderProjects() {
+        const workList = document.getElementById("workList");
+        const visibleProjects = projects.slice(
+          currentIndex,
+          currentIndex + projectsPerPage
+        );
+        workList.innerHTML = visibleProjects.map(createProjectCard).join("");
+      }
+
+      function nextProjects() {
+        if (currentIndex + projectsPerPage < projects.length) {
+          currentIndex += projectsPerPage;
+          renderProjects();
+        }
+      }
+
+      function prevProjects() {
+        if (currentIndex - projectsPerPage >= 0) {
+          currentIndex -= projectsPerPage;
+          renderProjects();
+        }
+      }
+
+      // Get the container element
+      document
+        .getElementById("nextBtn")
+        .addEventListener("click", nextProjects);
+      document
+        .getElementById("prevBtn")
+        .addEventListener("click", prevProjects);
+
+      // Initial render of projects
+      renderProjects();
+    </script>
+  </body>
 </html>
