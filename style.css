@@ -18,7 +18,8 @@ hr {
 
 body{
     background: #080808;
-    padding-right: 10%;
+    /* padding-right: 10%; */
+    margin: 0;
 }
 
 .header{
@@ -30,6 +31,12 @@ body{
   width: 100%;
   height: 100%;
   background-color: lightgreen; 
+  margin-left: 10%;
+}
+
+#particles-js {
+  background: black;
+  height: 90%;
 }
 
 nav{
@@ -155,7 +162,7 @@ nav ul li a:hover::after{
 }
 
 .about{
-  padding: 80px 0;
+  padding-top: 80px;
   color: #ababab;
 }
 
@@ -292,8 +299,27 @@ nav ul li a:hover::after{
   top: 50%;
 }
 
-.portfolio{
-  /* padding: 50px 0; */
+#particles-js {
+  position: relative;
+  width: 100%;
+  min-height: 88vh; /* Ensure the container is at least full viewport height */
+  overflow: hidden;
+}
+
+/* Particles.js canvas styles */
+#particles-js > canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 80% !important;
+  z-index: 1; /* Place it behind the content */
+}
+
+/* Adjust the portfolio section to overlay the particles */
+.portfolio {
+  position: relative;
+  z-index: 2; /* Ensure it's above the particles canvas */
   padding-left: 5%;
 }
 
@@ -363,23 +389,21 @@ nav ul li a:hover::after{
 }
 
 .layer a{
-  margin-top: 45px ;
+  /* margin-top: 45px ; */
   color: #ff004f;
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
-  /* background: white; */
   width: 60px;
   height: 60px;
-  /* border-radius: 50%; */
-  text-align: center;
+  text-align: right;
 }
 
 .layer a img{
   /* border-radius: 50%; */
-  width: 30px;
-  height: 30px;
-  align-items: center;
+  width: 60px;
+  height: 60px;
+  align-items: right;
 }
 
 .myinfo{
@@ -415,11 +439,18 @@ nav ul li a:hover::after{
 
 
 .carousel-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /* margin: 20px 0; */
+  padding-right: 5%;
+}
+
+.portfolio,
+.carousel-container {
+  pointer-events: none;
 }
 
 #workList {
@@ -495,9 +526,7 @@ nav ul li a:hover::after{
   margin-top: 10px;
   display: flex;
   gap: 10px;
-  /* background-color: #ad0036; */
   background-image: linear-gradient(#e60746 #ad0036 );
-  /* width: 70%; */
   border-radius: px;
   height: 15%;
   align-items: center;
@@ -512,3 +541,24 @@ nav ul li a:hover::after{
   object-fit: cover;
 }
 
+.tab-icon {
+  width: 25px; /* Adjust the size as needed */
+  height: 25px;
+  display: inline-block;
+  margin-left: 5px;
+  object-fit: contain; /* Ensures the icon fits within its container */
+}
+
+
+.tab-icon:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  filter: brightness(1.2); /* Brightness effect on hover */
+}
+
+#prevBtn,
+#nextBtn,
+.work-list,
+.work,
+.work * {
+  pointer-events: auto;
+}
