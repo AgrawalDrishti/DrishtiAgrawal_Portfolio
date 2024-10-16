@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <div class="header">
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./portfolio.html">Projects</a></li>
+            <li><a href="./resume.html">Resume</a></li>
+            <li><a href="./contact_me.html">Contact Me</a></li>
+          </ul>
+        </nav>
+      </div>
+      <hr />
+
+      <div class="contactMe">
+        <div class="left">
+
+          <h1>Let's Connect</h1>
+          <form id="emailForm">
+            <label for="subject">Subject:</label> <br>
+            <input type="text" id="subject" name="subject" required>
+            <br><br>
+        
+            <label for="body">Body:</label> <br>
+            <textarea id="body" name="body" rows="4" cols="50" required></textarea>
+            <br><br>
+        
+            <button type="submit">Send Email</button>
+          </form>
+        </div>
+        <div class="right">
+          <a class="contact_card github" href="https://github.com/AgrawalDrishti" target="_blank">
+            <img src="../icons/git (2).png" alt="GitHub">
+            <p>GitHub</p>
+          </a>
+          <a class="contact_card codeforces" href="https://codeforces.com/" target="_blank">
+            <img src="../icons/code-forces.png" alt="CodeForces">
+            <p>CodeForces</p>
+          </a>
+          <a class="contact_card email" href="mailto:agrawal.24@iitj.ac.in">
+            <img src="../icons/gmail.png" alt="Email">
+            <p>Email</p>
+          </a>
+          <a class="contact_card hackerrank" href="https://www.hackerrank.com/" target="_blank">
+            <img src="../icons/hackerrank.png" alt="HackerRank">
+            <p>HackerRank</p>
+          </a>
+          <a class="contact_card linkedin" href="https://www.linkedin.com/in/drishti-agrawal-a6b977229/" target="_blank">
+            <img src="../icons/link.png" alt="LinkedIn">
+            <p>LinkedIn</p>
+          </a>
+          
+          <a class="contact_card leetcode" href="https://leetcode.com/" target="_blank">
+            <img src="../icons/LeetCode_Logo_1.png" alt="LeetCode">
+            <p>LeetCode</p>
+          </a>
+          <a class="contact_card instagram" href="https://www.instagram.com/" target="_blank">
+            <img src="../icons/insta.png" alt="Instagram">
+            <p>Instagram</p>
+          </a>
+          <a class="contact_card gfg" href="https://leetcode.com/" target="_blank">
+            <img src="../icons/gfg.png" alt="LeetCode">
+            <p>GeeksForGeeks</p>
+          </a>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script>
+          (function() {
+              emailjs.init("GlZ2laDdbV1BmxN4f"); // Replace with your EmailJS user ID
+          })();
+      
+          document.getElementById('emailForm').addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent the default form submission
+      
+              // Get form values
+              const subject = document.getElementById('subject').value;
+              const body = document.getElementById('body').value;
+      
+              // Set up email parameters
+              const templateParams = {
+                  subject: subject,
+                  body: body,
+                  to_email: "agrawal.24@iitj.ac.in" // Replace with your email address
+              };
+      
+              // Send the email
+              emailjs.send("service_pczi5ke", "template_ywyg8dt", templateParams)
+                  .then(function(response) {
+                      alert('Email sent successfully!');
+                  }, function(error) {
+                      alert('Failed to send email. Please try again.');
+                  });
+          });
+      </script>
+</body>
+</html>

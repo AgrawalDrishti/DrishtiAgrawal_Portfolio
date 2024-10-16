@@ -132,6 +132,7 @@ nav ul li a:hover::after{
   top: 15%;
   color: #f2f2f2;
   left: 6%; 
+  /* object-fit: contain; */
   /* filter: drop-shadow(20px 20px 20px rgba(128, 126, 126, 0.467)); */
   filter: drop-shadow(30px 10px 4px #4444dd);
 }
@@ -312,7 +313,7 @@ nav ul li a:hover::after{
   top: 0;
   left: 0;
   width: 100% !important;
-  height: 80% !important;
+  height: 100% !important;
   z-index: 1; /* Place it behind the content */
 }
 
@@ -339,7 +340,7 @@ nav ul li a:hover::after{
   display: grid;
   grid-template-columns: repeat(auto-fit , minmax(250px , 1fr));
   grid-gap: 1px;
-  margin-top: 50px;
+  margin-top: 9vh;
 }
 
 .work{
@@ -561,4 +562,162 @@ nav ul li a:hover::after{
 .work,
 .work * {
   pointer-events: auto;
+}
+
+.resumeContainer {
+  position: relative; /* Establish positioning context */
+  margin-top: 1vh;
+  height: 86vh;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Higher than the canvas */
+  pointer-events: none;
+}
+
+.resume{
+  pointer-events: auto;
+}
+
+/* Contact Me Section */
+.contactMe {
+  width: 99vw;
+  height: 82vh;
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+.left {
+  flex: 1;
+  padding: 20px;
+}
+
+.right {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.left h1, .right h1 {
+  color: rgb(255, 52, 96);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+#emailForm {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#emailForm label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+#emailForm input[type="text"],
+#emailForm textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+}
+
+#emailForm button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff004f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#emailForm button:hover {
+  background-color: #e60045;
+}
+
+/* Contact Cards */
+.contact_card {
+  display: flex;
+  align-items: center;
+  width: 35%;
+  background-color: #1a1a1a;
+  border: 2px solid #444; /* Default border color */
+  box-shadow: 0 0 10px #444; /* Default shadow color */
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+
+.contact_card:hover {
+  transform: scale(1.05);
+}
+
+.contact_card img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+.contact_card p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Custom Border Colors for Each Card */
+.contact_card.github {
+  border-color: #333;
+  box-shadow: 0 0 10px #333;
+}
+
+.contact_card.linkedin {
+  border-color: #0077B5;
+  box-shadow: 0 0 10px #0077B5;
+}
+
+.contact_card.email {
+  border-color: #D44638;
+  box-shadow: 0 0 10px #D44638;
+}
+
+.contact_card.instagram {
+  border-color: #C13584;
+  box-shadow: 0 0 10px #C13584;
+}
+
+.contact_card.hackerrank {
+  border-color: #00EA64;
+  box-shadow: 0 0 10px #00EA64;
+}
+
+.contact_card.codeforces {
+  border-color: #2196f3;
+  box-shadow: 0 0 10px #2196f3;
+}
+
+.contact_card.leetcode {
+  border-color: #FFA116;
+  box-shadow: 0 0 10px #FFA116;
+}
+
+.contact_card.gfg {
+  border-color: #0F9D58;
+  box-shadow: 0 0 10px #0F9D58;
 }
