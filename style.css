@@ -596,6 +596,7 @@ nav ul li a:hover::after{
   padding: 20px;
   text-align: left;
   margin-left: 1vw;
+  pointer-events: auto;
 }
 
 .right {
@@ -610,6 +611,7 @@ nav ul li a:hover::after{
   height: 78%;
   margin-top: 12vh;
   margin-right: 4vw;
+  pointer-events: auto;
 }
 
 .card-wrapper {
@@ -640,6 +642,7 @@ nav ul li a:hover::after{
   background-color: #1a1a1a; /* Add background to make it more distinct */
   padding: 30px; /* Add padding for spacing */
   border-radius: 10px; /* Round the form edges */
+  pointer-events: auto;
 }
 
 #emailForm label {
