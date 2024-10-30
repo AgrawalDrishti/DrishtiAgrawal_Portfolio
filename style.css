@@ -165,16 +165,21 @@ nav ul li a:hover::after{
 .about{
   padding-top: 80px;
   color: #ababab;
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .rowAbt{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  pointer-events: auto;
 }
 
 .columnAbt1{
   flex-basis: 35%;
+  pointer-events: none;
 }
 
 .columnAbt1 img{
@@ -182,10 +187,8 @@ nav ul li a:hover::after{
   margin-top: 2vh;
   width: 85%;
   height: 95%;
-  /* border: 50%; */
   border-radius: 20%;
-  /* border: 1px solid red; */
-  /* filter: drop-shadow(10px 10px 4px #4a4a4a); */
+  pointer-events: none;
 }
 
 .columnAbt2{
@@ -203,10 +206,11 @@ nav ul li a:hover::after{
 }
 
 .me{
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Shantell Sans";
   font-weight: 500;
   color: #c5c4c4;
+  width: 90%;
 }
 
 #typewriter-text::after {
@@ -266,7 +270,6 @@ nav ul li a:hover::after{
 }
 
 .tab-contents{
-  /* position: absolute; */
   left: 36vw;
   top: 48vh;
 }
@@ -305,6 +308,7 @@ nav ul li a:hover::after{
   width: 100%;
   min-height: 88vh; /* Ensure the container is at least full viewport height */
   overflow: hidden;
+  z-index: 1;
 }
 
 /* Particles.js canvas styles */
@@ -597,6 +601,7 @@ nav ul li a:hover::after{
   text-align: left;
   margin-left: 1vw;
   pointer-events: auto;
+  height: 100%;
 }
 
 .right {
@@ -636,19 +641,18 @@ nav ul li a:hover::after{
 #emailForm {
   color: white;
   font-size: 18px;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  margin-left: 3vw;
   background-color: #1a1a1a; /* Add background to make it more distinct */
   padding: 30px; /* Add padding for spacing */
   border-radius: 10px; /* Round the form edges */
   pointer-events: auto;
+  height: 83.5%;
 }
 
 #emailForm label {
   display: block;
   font-size: 23px;
-  color: #e4e4e4; /* A more vibrant color for labels to match the theme */
+  color: #e4e4e4; 
   margin-bottom: 1px;
 }
 
