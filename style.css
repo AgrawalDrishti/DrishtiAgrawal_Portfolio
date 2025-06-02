@@ -396,21 +396,43 @@ nav ul li a:hover::after{
 }
 
 .layer a{
-  /* margin-top: 45px ; */
-  color: #ff004f;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 60px;
-  width: 60px;
-  height: 60px;
-  text-align: right;
+  /* position: absolute;
+  bottom: 18px;
+  right: 18px; */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  background: rgba(255,255,255,0.10);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px #ff004f33;
+  z-index: 2;
 }
 
 .layer a img{
-  /* border-radius: 50%; */
-  width: 60px;
-  height: 60px;
-  align-items: right;
+  width: 6vw;
+  /* height: 28px; */
+  filter: brightness(1.2) drop-shadow(0 0 4px #ff004f88);
+  transition: filter 0.2s;
+}
+
+.layer:hover a {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.1);
+}
+
+/* .layer a:hover {
+  background: #ff004f;
+  box-shadow: 0 4px 20px #ff004f77;
+} */
+
+.layer a:hover img {
+  filter: brightness(2) drop-shadow(0 0 8px #fff);
 }
 
 .myinfo{
@@ -541,11 +563,36 @@ nav ul li a:hover::after{
   box-shadow: 0px 5px 5px #ba2252;
 }
 
+/* Beautify the tech stack icons in project cards */
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
 .tech-icon {
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-  object-fit: cover;
+  /* width: 3vw; */
+  height: 6vh;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.18); /* Brighter background */
+  box-shadow: 0 2px 12px #ff004f44;
+  padding: 6px;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  object-fit: contain;
+  border: 2px solid #ff004f88; /* More visible border */
+  filter: brightness(1.15) saturate(1.3) contrast(1.1); /* Boost vibrancy */
+}
+
+.tech-icon:hover {
+  transform: scale(1.18) rotate(-6deg);
+  box-shadow: 0 4px 20px #ff004faa, 0 0 10px #fff2;
+  filter: brightness(1.35) saturate(1.5) contrast(1.2) drop-shadow(0 0 8px #ff004f88);
+  border-color: #ff004f;
+  background: #fff3;
 }
 
 .tab-icon {
@@ -824,6 +871,35 @@ nav ul li a:hover::after{
     font-size: 1.1em;
     width: 100%;
   }
+
+  .work-list {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+    justify-items: center;
+  }
+  .work {
+    width: 90vw;
+    max-width: 400px;
+    min-width: 220px;
+    height: auto;
+  }
+  .carousel-container {
+    flex-direction: column;
+    align-items: center;
+    /* padding-right: 0; */
+  }
+  #prevBtn,
+  #nextBtn {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    margin: 12px 0;
+    transform: none;
+  }
+
+  .layer a img{
+    width: 8vw;
+  }
 }
 
 /* Stack navbar links vertically on small screens */
@@ -871,6 +947,10 @@ nav ul li a:hover::after{
   .Design{
     font-size: 1em;
   }
+
+  .layer a img{
+    width: 12vw;
+  }
 }
 
 /* Ensure tab-contents is always below tab-titles */
@@ -884,4 +964,25 @@ nav ul li a:hover::after{
   width: 100%;
   margin-top: 0;
   margin-left: 0;
+}
+
+
+.work:hover .layer > *:not(a) {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s;
+}
+
+.work:hover .layer a {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 2;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: scale(1.2);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%) scale(1.2);
 }
