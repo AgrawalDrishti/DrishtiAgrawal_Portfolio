@@ -227,11 +227,11 @@ nav ul li a:hover::after{
 
 .tab-titles{
   display: flex;
-  justify-content: flex-start; /* Always align to left */
+  justify-content: flex-start; 
   align-items: flex-end;
   margin-top: 5vh;
   margin-bottom: 3vh;
-  gap: 30px; /* Optional: space between tab links */
+  /* gap: 30px;  */
 }
 
 .tab-links{
@@ -854,14 +854,14 @@ nav ul li a:hover::after{
   }
 
   .tab-titles{
-    max-width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 5px;
   }
 
   .tab-links{
-    font-size: 1.1em; 
+    font-size: 1em; 
   }
 
   .tab-contents ul li span{
