@@ -900,6 +900,21 @@ nav ul li a:hover::after{
   .layer a img{
     width: 8vw;
   }
+
+  .resumeContainer {
+    width: 100vw !important;
+    height: 70vh !important;
+    padding: 0;
+    margin: 0;
+    pointer-events: auto;
+  }
+  .resume {
+    width: 95vw !important;
+    height: 60vh !important;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 8px;
+  }
 }
 
 /* Stack navbar links vertically on small screens */
